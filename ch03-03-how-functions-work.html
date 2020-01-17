@@ -3,7 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>함수 동작 원리 - The Rust Programming Language</title>
+        <title>Functions - The Rust Programming Language</title>
+        
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +28,10 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="ferris.css">
+        
+        <link rel="stylesheet" href="theme/2018-edition.css">
         
 
         
@@ -56,7 +62,7 @@
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script type="text/javascript">
             var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             document.body.className = theme;
             document.querySelector('html').className = theme + ' js';
@@ -75,7 +81,10 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li class="affix"><a href="foreword.html">들어가기 앞서</a></li><li class="affix"><a href="ch00-00-introduction.html">소개</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> 시작하기</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> 설치하기</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, World!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> 추리 게임 튜토리얼</a></li><li><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> 보편적인 프로그래밍 개념</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> 변수와 가변성</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> 데이터 타입들</a></li><li><a href="ch03-03-how-functions-work.html" class="active"><strong aria-hidden="true">3.3.</strong> 함수 동작 원리</a></li><li><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> 주석</a></li><li><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> 제어문</a></li></ol></li><li><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> 소유권 이해하기</a></li><li><ol class="section"><li><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> 소유권이 뭔가요?</a></li><li><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> 참조자와 빌림</a></li><li><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> 슬라이스</a></li></ol></li><li><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> 연관된 데이터들을 구조체로 다루기</a></li><li><ol class="section"><li><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> 구조체를 정의하고 생성하기</a></li><li><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> 구조체를 이용한 예제 프로그램</a></li><li><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> 메소드 문법</a></li></ol></li><li><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> 열거형과 패턴 매칭</a></li><li><ol class="section"><li><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> 열거형 정의하기</a></li><li><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> match 흐름 제어 연산자</a></li><li><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> if let을 사용한 간결한 흐름 제어</a></li></ol></li><li><a href="ch07-00-modules.html"><strong aria-hidden="true">7.</strong> 모듈</a></li><li><ol class="section"><li><a href="ch07-01-mod-and-the-filesystem.html"><strong aria-hidden="true">7.1.</strong> mod와 파일 시스템</a></li><li><a href="ch07-02-controlling-visibility-with-pub.html"><strong aria-hidden="true">7.2.</strong> pub으로 가시성 제어하기</a></li><li><a href="ch07-03-importing-names-with-use.html"><strong aria-hidden="true">7.3.</strong> use로 이름 가져오기</a></li></ol></li><li><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> 일반적인 컬렉션</a></li><li><ol class="section"><li><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> 벡터</a></li><li><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> 스트링</a></li><li><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> 해쉬맵</a></li></ol></li><li><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> 에러 처리</a></li><li><ol class="section"><li><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> panic!과 함께하는 복구 불가능한 에러</a></li><li><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Result와 함께하는 복구 가능한 에러</a></li><li><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> panic!이냐, panic!이 아니냐, 그것이 문제로다</a></li></ol></li><li><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 제네릭 타입, 트레잇, 그리고 라이프타임</a></li><li><ol class="section"><li><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 제네릭 데이터 타입</a></li><li><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 트레잇: 공유 동작을 정의하기</a></li><li><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 라이프타임을 이용한 참조자 유효화</a></li></ol></li><li><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 테스팅</a></li><li><ol class="section"><li><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 테스트 작성하기</a></li><li><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 테스트 실행하기</a></li><li><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 테스트 조직화</a></li></ol></li><li><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> I/O 프로젝트: 커맨드 라인 프로그램 만들기</a></li><li><ol class="section"><li><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 커맨드 라인 인자 허용하기</a></li><li><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 파일 읽기</a></li><li><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 모듈성과 에러처리의 향상을 위한 리팩토링</a></li><li><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 테스트 주도 개발로 라이브러리의 기능 개발하기</a></li><li><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 환경 변수들을 활용하기</a></li><li><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 표준출력 대신 표준에러로 에러메시지 출력하기</a></li></ol></li><li><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> 함수형 언어의 특성들: 반복자들과 클로저들</a></li><li><ol class="section"><li><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> 클로저: 환경을 캡쳐할 수 있는 익명 함수</a></li><li><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> 반복자로 일련의 항목들 처리하기</a></li><li><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> I/O 프로젝트 개선하기</a></li><li><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> 성능 비교하기: 루프 vs. 반복자</a></li></ol></li><li><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> Cargo와 Crates.io 더 알아보기</a></li><li><ol class="section"><li><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 릴리즈 프로필을 이용해 빌드 커스터마이징하기</a></li><li><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> Crates.io에 크레이트 배포하기</a></li><li><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> Cargo 작업공간</a></li><li><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> cargo install을 이용해 Crates.io에서 바이너리 설치하기</a></li><li><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 커스텀 명령어로 Cargo 확장하기</a></li></ol></li><li><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 스마트 포인터</a></li><li><ol class="section"><li><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> Box<T>는 힙에 있는 데이터를 가리키고 알려진 크기를 갖습니다</a></li><li><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> Deref 트레잇은 참조자를 통하여 데이터로의 접근을 허용합니다</a></li><li><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> Drop 트레잇은 메모리 정리 코드를 실행시킵니다</a></li><li><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> Rc<T>, 참조 카운팅 스마트 포인터</a></li><li><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> RefCell<T>와 내부 가변성 패턴</a></li><li><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 순환 참조를 만드는 것과 메모리 누수는 안전한 것에 해당됩니다</a></li></ol></li><li><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 겁없는 동시성</a></li><li><ol class="section"><li><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 스레드</a></li><li><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 메세지 패싱</a></li><li><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 공유 상태</a></li><li><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 확장 가능한 동시성: Sync와 Send</a></li></ol></li><li><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> 러스트의 객체 지향 프로그래밍 기능들</a></li><li><ol class="section"><li><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 객체 지향 언어의 특성</a></li><li><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 트레잇 객체를 사용하여 다른 타입 간의 값 허용하기</a></li><li><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 객체 지향 디자인 패턴 구현하기</a></li></ol></li><li><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 값의 구조와 매칭되는 패턴</a></li><li><ol class="section"><li><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 패턴이 사용될 수 있는 모든 곳</a></li><li><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 반증 가능성: 패턴의 매칭이 실패할 수도 있는 경우</a></li><li><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 패턴 문법의 모든 것</a></li></ol></li><li><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 고급 기능들</a></li><li><ol class="section"><li><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 안전하지 않은 러스트</a></li><li><a href="ch19-02-advanced-lifetimes.html"><strong aria-hidden="true">19.2.</strong> 고급 라이프타임</a></li><li><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.3.</strong> 고급 트레잇</a></li><li><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.4.</strong> 고급 타입</a></li><li><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.5.</strong> 고급 함수와 클로저</a></li></ol></li><li><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 마지막 프로젝트: 멀티스레드 웹서버 만들기</a></li><li><ol class="section"><li><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 싱글 스레드 웹서버</a></li><li><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 싱글 스레드 서버를 멀티스레드 서버로 바꾸기</a></li><li><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 우아한 종료와 정리</a></li></ol></li><li><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> Appendix</a></li><li><ol class="section"><li><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> A - 키워드</a></li><li><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> B - 연산자 및 기호</a></li><li><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> C - derive 가능한 트레잇</a></li><li><a href="appendix-04-macros.html"><strong aria-hidden="true">21.4.</strong> D - 매크로</a></li><li><a href="appendix-05-translation.html"><strong aria-hidden="true">21.5.</strong> E - 본 책의 번역본 목록</a></li><li><a href="appendix-06-newest-features.html"><strong aria-hidden="true">21.6.</strong> F - 새로운 기능</a></li><li><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> G - 러스트가 만들어지는 과정과 “Nightly Rust”</a></li><li><a href="appendix-08-glossary.html"><strong aria-hidden="true">21.8.</strong> F - 번역 용어 정리</a></li></ol></li></ol>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="affix"><a href="title-page.html">The Rust Programming Language</a></li><li class="affix"><a href="foreword.html">Foreword</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, World!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programming a Guessing Game</a></li><li><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Common Programming Concepts</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Variables and Mutability</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Data Types</a></li><li><a href="ch03-03-how-functions-work.html" class="active"><strong aria-hidden="true">3.3.</strong> Functions</a></li><li><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Comments</a></li><li><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Control Flow</a></li></ol></li><li><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Understanding Ownership</a></li><li><ol class="section"><li><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> What is Ownership?</a></li><li><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> References and Borrowing</a></li><li><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> The Slice Type</a></li></ol></li><li><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Using Structs to Structure Related Data</a></li><li><ol class="section"><li><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Defining and Instantiating Structs</a></li><li><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> An Example Program Using Structs</a></li><li><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> Method Syntax</a></li></ol></li><li><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Enums and Pattern Matching</a></li><li><ol class="section"><li><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Defining an Enum</a></li><li><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> The match Control Flow Operator</a></li><li><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Concise Control Flow with if let</a></li></ol></li><li><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Managing Growing Projects with Packages, Crates, and Modules</a></li><li><ol class="section"><li><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Packages and Crates</a></li><li><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Defining Modules to Control Scope and Privacy</a></li><li><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Paths for Referring to an Item in the Module Tree</a></li><li><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Bringing Paths Into Scope with the use Keyword</a></li><li><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Separating Modules into Different Files</a></li></ol></li><li><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Common Collections</a></li><li><ol class="section"><li><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Storing Lists of Values with Vectors</a></li><li><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Storing UTF-8 Encoded Text with Strings</a></li><li><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> Storing Keys with Associated Values in Hash Maps</a></li></ol></li><li><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> Error Handling</a></li><li><ol class="section"><li><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Unrecoverable Errors with panic!</a></li><li><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Recoverable Errors with Result</a></li><li><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> To panic! or Not To panic!</a></li></ol></li><li><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> Generic Types, Traits, and Lifetimes</a></li><li><ol class="section"><li><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> Generic Data Types</a></li><li><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> Traits: Defining Shared Behavior</a></li><li><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> Validating References with Lifetimes</a></li></ol></li><li><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> Writing Automated Tests</a></li><li><ol class="section"><li><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> How to Write Tests</a></li><li><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> Controlling How Tests Are Run</a></li><li><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> Test Organization</a></li></ol></li><li><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> An I/O Project: Building a Command Line Program</a></li><li><ol class="section"><li><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> Accepting Command Line Arguments</a></li><li><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> Reading a File</a></li><li><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> Refactoring to Improve Modularity and Error Handling</a></li><li><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> Developing the Library’s Functionality with Test Driven Development</a></li><li><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> Working with Environment Variables</a></li><li><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> Writing Error Messages to Standard Error Instead of Standard Output</a></li></ol></li><li><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Functional Language Features: Iterators and Closures</a></li><li><ol class="section"><li><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Closures: Anonymous Functions that Can Capture Their Environment</a></li><li><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Processing a Series of Items with Iterators</a></li><li><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Improving Our I/O Project</a></li><li><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparing Performance: Loops vs. Iterators</a></li></ol></li><li><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> More about Cargo and Crates.io</a></li><li><ol class="section"><li><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> Customizing Builds with Release Profiles</a></li><li><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> Publishing a Crate to Crates.io</a></li><li><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> Cargo Workspaces</a></li><li><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> Installing Binaries from Crates.io with cargo install</a></li><li><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> Extending Cargo with Custom Commands</a></li></ol></li><li><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> Smart Pointers</a></li><li><ol class="section"><li><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> Using Box<T> to Point to Data on the Heap</a></li><li><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> Treating Smart Pointers Like Regular References with the Deref Trait</a></li><li><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> Running Code on Cleanup with the Drop Trait</a></li><li><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> Rc<T>, the Reference Counted Smart Pointer</a></li><li><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> RefCell<T> and the Interior Mutability Pattern</a></li><li><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> Reference Cycles Can Leak Memory</a></li></ol></li><li><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> Fearless Concurrency</a></li><li><ol class="section"><li><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> Using Threads to Run Code Simultaneously</a></li><li><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> Using Message Passing to Transfer Data Between Threads</a></li><li><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> Shared-State Concurrency</a></li><li><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> Extensible Concurrency with the Sync and Send Traits</a></li></ol></li><li><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Object Oriented Programming Features of Rust</a></li><li><ol class="section"><li><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> Characteristics of Object-Oriented Languages</a></li><li><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> Using Trait Objects That Allow for Values of Different Types</a></li><li><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> Implementing an Object-Oriented Design Pattern</a></li></ol></li><li><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> Patterns and Matching</a></li><li><ol class="section"><li><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> All the Places Patterns Can Be Used</a></li><li><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> Refutability: Whether a Pattern Might Fail to Match</a></li><li><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> Pattern Syntax</a></li></ol></li><li><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> Advanced Features</a></li><li><ol class="section"><li><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> Unsafe Rust</a></li><li><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> Advanced Traits</a></li><li><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> Advanced Types</a></li><li><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> Advanced Functions and Closures</a></li><li><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> Macros</a></li></ol></li><li><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> Final Project: Building a Multithreaded Web Server</a></li><li><ol class="section"><li><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> Building a Single-Threaded Web Server</a></li><li><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> Turning Our Single-Threaded Server into a Multithreaded Server</a></li><li><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> Graceful Shutdown and Cleanup</a></li></ol></li><li><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> Appendix</a></li><li><ol class="section"><li><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> A - Keywords</a></li><li><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> B - Operators and Symbols</a></li><li><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> C - Derivable Traits</a></li><li><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> D - Useful Development Tools</a></li><li><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> E - Editions</a></li><li><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> F - Translations of the Book</a></li><li><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> G - How Rust is Made and “Nightly Rust”</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -105,7 +114,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">The Rust Programming Language</h1> 
+                        <h1 class="menu-title">The Rust Programming Language</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -140,12 +149,14 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#함수-동작-원리" id="함수-동작-원리"><h2>함수 동작 원리</h2></a>
-<p>함수는 Rust에 녹아들어 있습니다. 여러분은 이미 언어에서 가장 중요하게 생각하는 <code>main</code>함수를 보셨습니다.
-이는 다수의 프로그램에서 실행 지점입니다. 여러분은 또한 <code>fn</code> 키워드도 보셨을텐데, 이는 새로운 함수의 선언을
-가용하게 합니다.</p>
-<p>Rust 코드는 <em>뱀 형태</em>를 변수나 함수 이름의 형식 규칙으로 사용합니다. 뱀 형태에서, 모든 문자는 소문자를 사용하며
-밑줄 표시로 단어를 구분합니다. 다음은 예제로 함수를 선언하는 프로그램 입니다:</p>
+                        <h2><a class="header" href="#functions" id="functions">Functions</a></h2>
+<p>Functions are pervasive in Rust code. You’ve already seen one of the most
+important functions in the language: the <code>main</code> function, which is the entry
+point of many programs. You’ve also seen the <code>fn</code> keyword, which allows you to
+declare new functions.</p>
+<p>Rust code uses <em>snake case</em> as the conventional style for function and variable
+names. In snake case, all letters are lowercase and underscores separate words.
+Here’s a program that contains an example function definition:</p>
 <p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     println!(&quot;Hello, world!&quot;);
@@ -157,15 +168,18 @@ fn another_function() {
     println!(&quot;Another function.&quot;);
 }
 </code></pre></pre>
-<p>Rust 에서의 함수 선언은 <code>fn</code>으로 시작하며 함수 이름 뒤에 괄호의 형식으로 되어 있습니다. 중괄호는 컴파일러에게
-함수의 시작과 종료 지점을 알려주게 됩니다.</p>
-<p>우리는 함수의 이름과 괄호 형식을 기입하는 것을 통해 우리가 선언했던 어떤 함수든 호출할 수 있습니다.
-<code>another_function</code>이 프로그램 내에 정의되어 있으므로, <code>main</code> 함수에서 해당 함수를 호출할 수 있습니다.
-주의할 점은, 소스 코드 내에서 <code>another_function</code>이 <code>main</code> 함수 <em>뒤에</em> 정의했다는 점 입니다. 우리는
-이를 <code>main</code> 함수 앞에도 정의할 수 있습니다. Rust는 당신의 함수의 위치를 신경쓰지 않습니다, 어디든 정의만 되어 있으면 됩니다.</p>
-<p>함수를 추가로 탐색하기 위해 <em>functions</em> 이라는 이름의 새로운 바이너리 프로젝트를 시작합시다.
-<code>another_function</code> 예제를 <em>src/main.rs</em> 에 넣고 실행해보세요.
-다음과 같은 결과가 나타납니다:</p>
+<p>Function definitions in Rust start with <code>fn</code> and have a set of parentheses
+after the function name. The curly brackets tell the compiler where the
+function body begins and ends.</p>
+<p>We can call any function we’ve defined by entering its name followed by a set
+of parentheses. Because <code>another_function</code> is defined in the program, it can be
+called from inside the <code>main</code> function. Note that we defined <code>another_function</code>
+<em>after</em> the <code>main</code> function in the source code; we could have defined it before
+as well. Rust doesn’t care where you define your functions, only that they’re
+defined somewhere.</p>
+<p>Let’s start a new binary project named <em>functions</em> to explore functions
+further. Place the <code>another_function</code> example in <em>src/main.rs</em> and run it. You
+should see the following output:</p>
 <pre><code class="language-text">$ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
     Finished dev [unoptimized + debuginfo] target(s) in 0.28 secs
@@ -173,13 +187,19 @@ fn another_function() {
 Hello, world!
 Another function.
 </code></pre>
-<p><code>main</code> 함수 안의 내용이 줄의 순서대로 수행됩니다. 처음으로, &quot;Hello, world!&quot; 메시지가 출력되고,
-<code>another_function</code>이 호출되고 그의 메시지를 출력합니다.</p>
-<a class="header" href="#함수-매개변수" id="함수-매개변수"><h3>함수 매개변수</h3></a>
-<p>함수는 함수 고유한 부분인 특별한 변수 <em>매개변수</em>를 갖는 형식으로 선언될 수 있습니다. 함수가 매개변수를 취할 때, 우리는
-상수를 그들의 전달인자로 제공할 수 있습니다. 기술적으로, 여기서 전달되는 상수를 <em>전달인자</em>라고 부릅니다만, 사람들은 보통
-“전달인자”와 “매개변수”를 혼용해서 사용하는 경향이 있습니다.</p>
-<p>다음의 재작성 된 <code>another_function</code>은 Rust에서 매개변수가 어떤 것이지 보여줍니다:</p>
+<p>The lines execute in the order in which they appear in the <code>main</code> function.
+First, the “Hello, world!” message prints, and then <code>another_function</code> is
+called and its message is printed.</p>
+<h3><a class="header" href="#function-parameters" id="function-parameters">Function Parameters</a></h3>
+<p>Functions can also be defined to have <em>parameters</em>, which are special variables
+that are part of a function’s signature. When a function has parameters, you
+can provide it with concrete values for those parameters. Technically, the
+concrete values are called <em>arguments</em>, but in casual conversation, people tend
+to use the words <em>parameter</em> and <em>argument</em> interchangeably for either the
+variables in a function’s definition or the concrete values passed in when you
+call a function.</p>
+<p>The following rewritten version of <code>another_function</code> shows what parameters
+look like in Rust:</p>
 <p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     another_function(5);
@@ -189,19 +209,23 @@ fn another_function(x: i32) {
     println!(&quot;The value of x is: {}&quot;, x);
 }
 </code></pre></pre>
-<p>이 프로그램을 실행해보시면 다음과 같은 결과가 출력되는 것을 보게 될 겁니다:</p>
+<p>Try running this program; you should get the following output:</p>
 <pre><code class="language-text">$ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
     Finished dev [unoptimized + debuginfo] target(s) in 1.21 secs
      Running `target/debug/functions`
 The value of x is: 5
 </code></pre>
-<p><code>another_function</code>의 선언은 <code>x</code>로 명명된 하나의 매개변수를 갖습니다. <code>x</code>의 타입은 <code>i32</code>로 정의됩니다.
-<code>5</code>가 <code>another_function</code>으로 전달되면, <code>println!</code> 매크로는 중괄호 짝으로 된 형식 문자열에 <code>5</code>를
-전달합니다. 함수의 선언부에서, 여러분은 <em>반드시</em> 각 매개변수의 타입을 정의해야 합니다. 이 사항은 Rust를 설계하며
-내린 신중한 결정사항 입니다: 함수의 정의에 타입을 명시하여 코드내 다른 부분에서 이들을 사용하는 것을 통해 당신의 의도를
-추측하지 않아도 되게 됩니다.</p>
-<p>여러분의 함수에 여러 개의 매개변수를 사용하고 싶으면, 매개변수들을 다음처럼 쉼표와 함께 구분해서 사용할 수 있습니다:</p>
+<p>The declaration of <code>another_function</code> has one parameter named <code>x</code>. The type of
+<code>x</code> is specified as <code>i32</code>. When <code>5</code> is passed to <code>another_function</code>, the
+<code>println!</code> macro puts <code>5</code> where the pair of curly brackets were in the format
+string.</p>
+<p>In function signatures, you <em>must</em> declare the type of each parameter. This is
+a deliberate decision in Rust’s design: requiring type annotations in function
+definitions means the compiler almost never needs you to use them elsewhere in
+the code to figure out what you mean.</p>
+<p>When you want a function to have multiple parameters, separate the parameter
+declarations with commas, like this:</p>
 <p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     another_function(5, 6);
@@ -212,10 +236,12 @@ fn another_function(x: i32, y: i32) {
     println!(&quot;The value of y is: {}&quot;, y);
 }
 </code></pre></pre>
-<p>이 예제는 각각 <code>i32</code> 타입인 두 개의 매개변수를 갖는 함수를 생성합니다. 함수는 그의 두 매개변수의 값을 출력합니다.
-주의할 점은, 함수 매개변수는 이번 예제처럼 굳이 같은 타입이 아니여도 된다는 점 입니다. 한번 코드를 실행해봅시다.
-여러분의 <em>function</em> 프로젝트의 <em>src/main.rs</em> 내용을 위의 예제로 변경한 뒤에,
-<code>cargo run</code>을 통해 수행시키면 됩니다:</p>
+<p>This example creates a function with two parameters, both of which are <code>i32</code>
+types. The function then prints the values in both of its parameters. Note that
+function parameters don’t all need to be the same type, they just happen to be
+in this example.</p>
+<p>Let’s try running this code. Replace the program currently in your <em>functions</em>
+project’s <em>src/main.rs</em> file with the preceding example and run it using <code>cargo run</code>:</p>
 <pre><code class="language-text">$ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
     Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
@@ -223,30 +249,37 @@ fn another_function(x: i32, y: i32) {
 The value of x is: 5
 The value of y is: 6
 </code></pre>
-<p>우리는 값 <code>5</code>와 <code>6</code>을 <code>x</code>와 <code>y</code>로 전달했기 때문에, 이 값들이 담긴 두 문장을 출력합니다.</p>
-<a class="header" href="#함수-본문" id="함수-본문"><h3>함수 본문</h3></a>
-<p>함수 본문은 필요에 따라 표현식으로 종결되는 구문의 나열로 구성됩니다. 지금까지 우리는 종결 표현식이 없는 함수만
-다뤘기에, 표현식이 구문의 일부처럼 여겨질지 모르겠습니다. Rust가 표현식에 기반한 언어기 때문에, 이것은 이해하셔야
-하는 중요한 차이점 입니다. 다른 언어들은 이와 같은 차이가 없으니, 구문과 표현식이 함수의 본문에 어떤 식으로 차이나게
-적용되는지 살펴보도록 하겠습니다.</p>
-<a class="header" href="#구문과-표현식" id="구문과-표현식"><h3>구문과 표현식</h3></a>
-<p>사실 우리는 이미 구문과 표현식을 사용했습니다. <em>구문</em>은 어떤 명령들의 나열로 값을 반환하지 않는 어떤 동작을 수행
-합니다. <em>포현식</em>은 결과 값을 산출해냅니다. 다음 몇 개의 예제를 살펴보도록 합시다. <code>let</code> 키워드를 통해 변수를
-만들고 값을 할당하는 구문을 만듭니다. 항목 3-3의, <code>let y = 6;</code>은 구문 입니다:</p>
+<p>Because we called the function with <code>5</code> as the value for  <code>x</code> and <code>6</code> is passed
+as the value for <code>y</code>, the two strings are printed with these values.</p>
+<h3><a class="header" href="#function-bodies-contain-statements-and-expressions" id="function-bodies-contain-statements-and-expressions">Function Bodies Contain Statements and Expressions</a></h3>
+<p>Function bodies are made up of a series of statements optionally ending in an
+expression. So far, we’ve only covered functions without an ending expression,
+but you have seen an expression as part of a statement. Because Rust is an
+expression-based language, this is an important distinction to understand.
+Other languages don’t have the same distinctions, so let’s look at what
+statements and expressions are and how their differences affect the bodies of
+functions.</p>
+<p>We’ve actually already used statements and expressions. <em>Statements</em> are
+instructions that perform some action and do not return a value. <em>Expressions</em>
+evaluate to a resulting value. Let’s look at some examples.</p>
+<p>Creating a variable and assigning a value to it with the <code>let</code> keyword is a
+statement. In Listing 3-1, <code>let y = 6;</code> is a statement.</p>
 <p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     let y = 6;
 }
 </code></pre></pre>
-<p><span class="caption">항목 3-3: 하나의 구문을 갖는 <code>main</code> 함수를 선언하였다. </span></p>
-<p>함수 정의는 또 하나의 구문입니다; 상기 예제는 자신 그 자체가 구문 입니다. 구문은 값을 반환하지 않습니다.
-그러니, 여러분은 다음처럼 <code>let</code> 구문을 사용해서는 다른 변수에 값을 대입할 수 없습니다:</p>
+<p><span class="caption">Listing 3-1: A <code>main</code> function declaration containing one statement</span></p>
+<p>Function definitions are also statements; the entire preceding example is a
+statement in itself.</p>
+<p>Statements do not return values. Therefore, you can’t assign a <code>let</code> statement
+to another variable, as the following code tries to do; you’ll get an error:</p>
 <p><span class="filename">Filename: src/main.rs</span></p>
-<pre><code class="language-rust ignore">fn main() {
+<pre><code class="language-rust ignore does_not_compile">fn main() {
     let x = (let y = 6);
 }
 </code></pre>
-<p>여러분이 이 프로그램을 수행하면, 다음과 같은 에러를 보게 될 겁니다:</p>
+<p>When you run this program, the error you’ll get looks like this:</p>
 <pre><code class="language-text">$ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
 error: expected expression, found statement (`let`)
@@ -257,14 +290,18 @@ error: expected expression, found statement (`let`)
   |
   = note: variable declaration using `let` is a statement
 </code></pre>
-<p><code>let y = 6</code> 구문은 반환 값이 없으므로, <code>x</code>에 bind 시킬 것이 없습니다. 이것이 다른 언어인 C나
-Ruby와의 차이점 입니다. 이들 언어들은 <code>x = y = 6</code>와 같은 코드가 <code>x</code>와 <code>y</code>에 모두 <code>6</code>의 값을
-대입할 수 있습니다; Rust에서는 허용되지 않습니다. 여러분이 작성하는 Rust 코드의 대부분은 표현식이며
-이는 어떤 값을 산출합니다. <code>5 + 6</code>과 같은 간단한 수학 연산을 살펴보면, 이는 <code>11</code>이란 값을 산출하는
-표현식입니다.</p>
-<p>표현식은 구문의 부분일 수 있습니다: 항목 3-3은 <code>let y = 6;</code>이란 구문을 갖는데, <code>6</code>은 <code>6</code>이란 값을
-산출하는 표현식입니다. 함수를 호출하는 것은 표현식입니다. 매크로를 호출하는 것은 표현식입니다. 예제처럼 새로운
-범위를 생성하는데 사용하는 block <code>{}</code>은 표현식입니다:</p>
+<p>The <code>let y = 6</code> statement does not return a value, so there isn’t anything for
+<code>x</code> to bind to. This is different from what happens in other languages, such as
+C and Ruby, where the assignment returns the value of the assignment. In those
+languages, you can write <code>x = y = 6</code> and have both <code>x</code> and <code>y</code> have the value
+<code>6</code>; that is not the case in Rust.</p>
+<p>Expressions evaluate to something and make up most of the rest of the code that
+you’ll write in Rust. Consider a simple math operation, such as <code>5 + 6</code>, which
+is an expression that evaluates to the value <code>11</code>. Expressions can be part of
+statements: in Listing 3-1, the <code>6</code> in the statement <code>let y = 6;</code> is an
+expression that evaluates to the value <code>6</code>. Calling a function is an
+expression. Calling a macro is an expression. The block that we use to create
+new scopes, <code>{}</code>, is an expression, for example:</p>
 <p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     let x = 5;
@@ -277,22 +314,26 @@ Ruby와의 차이점 입니다. 이들 언어들은 <code>x = y = 6</code>와 �
     println!(&quot;The value of y is: {}&quot;, y);
 }
 </code></pre></pre>
-<p>표현식 부:</p>
+<p>This expression:</p>
 <pre><code class="language-rust ignore">{
     let x = 3;
     x + 1
 }
 </code></pre>
-<p>이번 경우에 해당 block은 <code>4</code>를 산출합니다. 이 값은 <code>let</code> 구문의 일부로 <code>y</code>에 bound됩니다.
-여러분이 앞서 봐온 것과 다르게 <code>x + 1</code> 줄의 마지막이 세미콜론으로 끝나지 않은 점을 주목하세요.
-표현식은 종결을 나타내는 세미콜론을 사용하지 않습니다. 만약 세미콜론을 표현식 마지막에 추가하면,
-이는 구문으로 변경되고 반환 값이 아니게 됩니다. 이후부터 함수의 반환 값과 표현식을 살펴보실때
-이 점을 유의하세요.</p>
-<a class="header" href="#반환-값을-갖는-함수" id="반환-값을-갖는-함수"><h3>반환 값을 갖는 함수</h3></a>
-<p>함수는 그들을 호출한 코드에 값을 반환할 수 있습니다. 우리는 반환되는 값을 명명해야 할 필요는 없지만, 그들의
-타입은 화살표(<code>-&gt;</code>) 뒤에 선언해야 합니다. Rust에서 반환 값은 함수 본문의 마지막 표현식의 값과 동일합니다.
-<code>return</code> 키워드와 값을 써서 함수로부터 일찍 반환할 수 있지만, 대부분의 함수들은 암묵적으로 마지막
-표현식을 반환합니다. 값을 반환하는 함수의 예를 보겠습니다:</p>
+<p>is a block that, in this case, evaluates to <code>4</code>. That value gets bound to <code>y</code>
+as part of the <code>let</code> statement. Note the <code>x + 1</code> line without a semicolon at
+the end, which is unlike most of the lines you’ve seen so far. Expressions do
+not include ending semicolons. If you add a semicolon to the end of an
+expression, you turn it into a statement, which will then not return a value.
+Keep this in mind as you explore function return values and expressions next.</p>
+<h3><a class="header" href="#functions-with-return-values" id="functions-with-return-values">Functions with Return Values</a></h3>
+<p>Functions can return values to the code that calls them. We don’t name return
+values, but we do declare their type after an arrow (<code>-&gt;</code>). In Rust, the return
+value of the function is synonymous with the value of the final expression in
+the block of the body of a function. You can return early from a function by
+using the <code>return</code> keyword and specifying a value, but most functions return
+the last expression implicitly. Here’s an example of a function that returns a
+value:</p>
 <p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn five() -&gt; i32 {
     5
@@ -304,27 +345,30 @@ fn main() {
     println!(&quot;The value of x is: {}&quot;, x);
 }
 </code></pre></pre>
-<p><code>five</code> 함수에는 함수 호출, 매크로, 심지어 <code>let</code> 구문도 없이 그저 <code>5</code>란 숫자 하나가 있습니다.
-이는 Rust에서 완벽하게 함수로 허용됩니다. 함수 반환 값의 타입이 <code>-&gt; i32</code>로 명시되어 있다는 점
-또한 주목하세요. 해당 코드를 수행하면 다음과 같은 결과를 얻게 될 겁니다:</p>
+<p>There are no function calls, macros, or even <code>let</code> statements in the <code>five</code>
+function—just the number <code>5</code> by itself. That’s a perfectly valid function in
+Rust. Note that the function’s return type is specified too, as <code>-&gt; i32</code>. Try
+running this code; the output should look like this:</p>
 <pre><code class="language-text">$ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
     Finished dev [unoptimized + debuginfo] target(s) in 0.30 secs
      Running `target/debug/functions`
 The value of x is: 5
 </code></pre>
-<p><code>5</code>는 <code>five</code> 함수가 반환한 값이고, 이 때문에 반환 타입을 <code>i32</code>으로 한 것이지요. 좀더 자세히
-설명해보겠습니다. 중요한 지점이 두 곳 있습니다: 첫 째, <code>let x = five();</code> 줄은 우리가 반환 값을
-변수의 초기 값으로 사용하는 것을 보여줍니다. <code>five</code>의 반환 값이 <code>5</code>이기 때문에, 해당 줄은 다음과
-동일합니다:</p>
+<p>The <code>5</code> in <code>five</code> is the function’s return value, which is why the return type
+is <code>i32</code>. Let’s examine this in more detail. There are two important bits:
+first, the line <code>let x = five();</code> shows that we’re using the return value of a
+function to initialize a variable. Because the function <code>five</code> returns a <code>5</code>,
+that line is the same as the following:</p>
 <pre><pre class="playpen"><code class="language-rust">
 # #![allow(unused_variables)]
 #fn main() {
 let x = 5;
 #}</code></pre></pre>
-<p>둘 째, <code>five</code> 함수는 매개변수 없이 반환 값에 대한 타입만 정의되어 있지만, 본문에는 <code>5</code>만이 세미콜론 없이
-외로이 있는 이유는 이것이 우리가 값을 반환하고자 할때 사용하는 하는 표현식이기 때문입니다. 다른 예제를 통해
-살펴보겠습니다:</p>
+<p>Second, the <code>five</code> function has no parameters and defines the type of the
+return value, but the body of the function is a lonely <code>5</code> with no semicolon
+because it’s an expression whose value we want to return.</p>
+<p>Let’s look at another example:</p>
 <p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     let x = plus_one(5);
@@ -336,10 +380,11 @@ fn plus_one(x: i32) -&gt; i32 {
     x + 1
 }
 </code></pre></pre>
-<p>이 코드를 수행하면 <code>The value of x is: 6</code>를 출력하게 됩니다. 우리가 <code>x + 1</code> 끝에 세미콜론을
-추가하여 표현식을 구문으로 변경하면 어떤 일이 일어날까요?</p>
+<p>Running this code will print <code>The value of x is: 6</code>. But if we place a
+semicolon at the end of the line containing <code>x + 1</code>, changing it from an
+expression to a statement, we’ll get an error.</p>
 <p><span class="filename">Filename: src/main.rs</span></p>
-<pre><code class="language-rust ignore">fn main() {
+<pre><code class="language-rust ignore does_not_compile">fn main() {
     let x = plus_one(5);
 
     println!(&quot;The value of x is: {}&quot;, x);
@@ -349,7 +394,7 @@ fn plus_one(x: i32) -&gt; i32 {
     x + 1;
 }
 </code></pre>
-<p>이 코드를 실행하면 다음과 같은 에러를 얻게 됩니다:</p>
+<p>Compiling this code produces an error, as follows:</p>
 <pre><code class="language-text">error[E0308]: mismatched types
  --&gt; src/main.rs:7:28
   |
@@ -363,11 +408,13 @@ fn plus_one(x: i32) -&gt; i32 {
   = note: expected type `i32`
              found type `()`
 </code></pre>
-<p>에러 메시지의 중요 포인트는 “mismatched types,”으로 이 코드의 주요 문제를 보여줍니다.
-<code>plus_one</code> 함수의 정의는 <code>i32</code> 값을 반환하겠다고 하였으나, 구문은 값을 산출하지 않기에 <code>()</code>처럼
-비어있는 튜플로 표현됩니다. 이런 이유로, 반환할 것이 없어서 함수가 정의된 내용과 상충하게 되고 이는 에러를
-발생시킵니다. 이번 결과에서는, Rust가 문제를 해결할 수 있도록 도와주는 메시지를 제공합니다: 세미콜론을
-제거하면 에러가 교정될 수도 있다고 제안하네요.</p>
+<p>The main error message, “mismatched types,” reveals the core issue with this
+code. The definition of the function <code>plus_one</code> says that it will return an
+<code>i32</code>, but statements don’t evaluate to a value, which is expressed by <code>()</code>,
+an empty tuple. Therefore, nothing is returned, which contradicts the function
+definition and results in an error. In this output, Rust provides a message to
+possibly help rectify this issue: it suggests removing the semicolon, which
+would fix the error.</p>
 
                     </main>
 
@@ -423,6 +470,8 @@ fn plus_one(x: i32) -&gt; i32 {
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="ferris.js"></script>
         
 
         
